@@ -1,0 +1,19 @@
+show dbs
+use assignment
+db.createCollection("users")
+db.users.insert({first_name : "shravan",last_name : "pm",email:"sravan@mail.com",gender:"male",ip_address:"192.572.27.1",age:21})
+db.users.find({}).pretty()
+
+db.users.insertMany([{first_name : "arjun",last_name : "kumar",email:"arjun@mail.com",gender:"male",ip_address:"192.522.27.1",age:25},{first_name : "ram",last_name : "kumar",email:"ram@mail.com",gender:"male",ip_address:"192.572.30.1",age:25},{first_name : "arathi",last_name : "ganesh",email:"arathi@mail.com",gender:"female",ip_address:"193.572.27.1",age:26},{first_name : "ganesh",last_name : "ram",email:"ganesh@mail.com",gender:"male",ip_address:"192.578.27.1",age:25},{first_name : "madan",last_name : "pm",email:"madan@mail.com",gender:"male",ip_address:"132.571.27.1",age:28},{first_name : "radhika",last_name : "kapoor",email:"radhika@mail.com",gender:"female",ip_address:"192.572.16.1",age:24}])
+db.users.insertMany([{first_name : "priya",last_name : "khan",email:"priya@mail.com",gender:"female",ip_address:"192.572.12.1",age:25},{first_name : "maya",last_name : "singh",email:"maya@mail.com",gender:"female",ip_address:"192.521.16.1",age:22},{first_name : "aarthi",last_name : "raj",email:"aarthi@mail.com",gender:"female",ip_address:"192.21.216.1",age:21}])
+db.users.find({}).pretty()
+db.users.update({"first_name" : "aarthi"},{$set:{"last_name":"rajesh"}})
+db.users.updateMany({"gender" : "male"},{$set:{"religion":"hindhu"}})
+db.users.find({}).pretty()
+db.users.remove({"_id" : ObjectId("6227216c9bc6cc4518e7ce6c")})
+db.users.find({}).pretty()
+db.users.remove({"gender" : "male"})
+db.users.find({}).pretty()
+db.dropDatabase()
+show dbs
+
